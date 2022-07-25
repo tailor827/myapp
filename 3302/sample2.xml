@@ -1,0 +1,96 @@
+<!-- 
+    class Language {
+        String name;
+        String creator;
+    }
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language [
+    <!ELEMENT language (name, creator)>
+    <!ELEMENT name (#PCDATA) >
+    <!ELEMENT creator (#PCDATA) >
+]>
+
+<language>
+    <name>C++</name>
+    <creator>Bjarne</creator>
+</language>
+
+<xs:schema 
+    attributeFormDefault="unqualified" 
+    elementFormDefault="qualified" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="language">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="name"/>
+        <xs:element type="xs:string" name="creator"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+
+<!DOCTYPE order [
+    <!ELEMENT order (customer, destination, products) >
+    <!ATTLIST order order_id CDATA #REQUIRED >
+    <!ATTLIST order priority CDATA #REQUIRED >
+
+    <!ELEMENT products (product+) >
+    <!ELEMENT customer (#PCDATA) >
+    <!ELEMENT destination (address, city, country) >
+    <!ELEMENT address (#PCDATA) >
+    <!ELEMENT city (#PCDATA) >
+    <!ELEMENT country (#PCDATA) >
+
+    <!ELEMENT product (title, quantity, price) >
+    <!ELEMENT title (#PCDATA) >
+    <!ELEMENT quantity (#PCDATA) >
+    <!ELEMENT price (#PCDATA) >
+    <!ATTLIST price currency CDATA #REQUIRED >
+]>
+
+<order order_id="2776" priority="high">
+	<customer>Belle Lapadula</customer>
+	<destination>
+		<address>B.Morada</address>
+		<city>Lipa</city>
+		<country>Philippines</country>
+	</destination>
+	<products>
+		<product>
+            <title>Prototype Saiun Kai Figure</title>
+            <quantity>3</quantity>
+            <price currency="peso">15000</price>
+        </product>
+        <product>
+            <title>Aichi Ryusei Figure</title>
+            <quantity>3</quantity>
+            <price currency="peso">15000</price>
+        </product>
+    </products>
+</order>
+
+
+
+
+<champInfo>
+	<name>ekko</name>
+	<class>assassin</class>
+	<role>jungle</role>
+	<runes>
+        <primary>Inspiration</primary>
+        <secondary>domination</secondary>
+    <runes>
+</champInfo>
+
+<!DOCTYPE champInfo [
+    <!ELEMENT champInfo (name, class, role, runes)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT class (#PCDATA)>
+    <!ELEMENT role (#PCDATA)>
+    <!ELEMENT runes (primary, secondary)>
+    <!ELEMENT primary (#PCDATA) >
+    <!ELEMENT secondary (#PCDATA)>
+]>
