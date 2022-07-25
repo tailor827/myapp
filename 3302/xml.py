@@ -1,4 +1,4 @@
-# by contributor 1
+# by contributor 2
 def convert(data):
     xml = '<languages>'
     for i in data:
